@@ -1,0 +1,40 @@
+{
+  "name": "firtsgraphql",
+  "version": "1.0.0",
+  "description": "Beggining with Graphql",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist --source-maps",
+    "dist-server": "node dist/index.js",
+    "start": "nodemon src/index.js --exec babel-node",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JairMora-Dev/OnBoarding_CondorLabs.git"
+  },
+  "keywords": [
+    "Graphql",
+    "Express",
+    "NodeJS"
+  ],
+  "author": "Jair Agudelo Mora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs/issues"
+  },
+  "homepage": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.7.2",
+    "graphql-tools": "^8.2.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.0"
+  }
+}
