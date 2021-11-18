@@ -1,0 +1,30 @@
+{
+  "name": "jesttest",
+  "version": "1.0.0",
+  "description": "Prueba simple con Jest",
+  "main": "url.test.js",
+  "scripts": {
+    "test": "jest",
+    "testCoverg": "jest --coverage"
+  },"jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["html"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JairMora-Dev/OnBoarding_CondorLabs.git"
+  },
+  "keywords": [
+    "Jest",
+    "Test"
+  ],
+  "author": "Jair Agudelo Mora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs/issues"
+  },
+  "homepage": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
