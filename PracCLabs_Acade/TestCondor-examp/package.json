@@ -1,0 +1,36 @@
+{
+  "name": "condortext",
+  "version": "1.0.0",
+  "description": "Ejercicio de la presentacion test",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/Index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JairMora-Dev/OnBoarding_CondorLabs.git"
+  },
+  "keywords": [
+    "CondorLabs",
+    "Testing",
+    "Exercise"
+  ],
+  "author": "Jair Agudelo Mora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs/issues"
+  },
+  "homepage": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "sinon": "^12.0.1",
+    "sinon-mongoose": "^2.3.0",
+    "supertest": "^6.1.6"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
