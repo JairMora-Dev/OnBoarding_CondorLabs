@@ -78,18 +78,21 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 ## 2. Models for MongoDB 
 
-### User models
+### 2.1 User models
 
-```json
-{
-"_id": 384720384283,
-"name": "Jeremy",
-"lastName": "Mathew Johnson",
-    "directions":{
-        "_id": 8938498349
+    ```json
+    {
+    "_id": 384720384283,
+    "name": "Jeremy",
+    "lastName": "Mathew Johnson",
+        "address":{
+            "_id": 8938498349
+        }
     }
-}
-```
+    ```
+
+With its corresponding address
+
 
 
 
