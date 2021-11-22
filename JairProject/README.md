@@ -43,7 +43,7 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 #### Professional register
 
-`POST /toWork/specialty`        Post to be trained
+`POST /toWork`        Post to be trained
 
 #### Professional LogIn
 
@@ -78,6 +78,9 @@ The API must be able to automatically generate the ADMIN user in the database. T
 `PUT /order/id`     Update your order
 
 `DELETE /order/id`  Cancel your order
+
+
+
 
 
 
