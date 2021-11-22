@@ -51,23 +51,6 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 `POST /doctor`      Post a new doctor 
 
-
-### 1.2 Professionals Endpoints
-
-#### Professional register
-
-`POST /toWork`        Post to be trained
-
-#### Professional LogIn
-
-`POST /doctor/logIn`
-
-#### Professional view acount
-
-`GET /doctor/id`      View your status in the API
-
-`GET /doctor/id/statistics` View your stadisctics
-
 ### 1.3 User Endpoints
 
 #### User register
