@@ -4,6 +4,19 @@ The API aims to create a web services infrastructure for the request of home doc
 access specialists in areas such as: Psychiatry, psychology, ophthalmology, pediatrics, 
 endocrinology and general medicine.
 
+# Dependencies 
+1. MongoDB 
+2. Swagger 
+3. JOI 
+4. Express.JS
+5. Bcrypt
+6. JWT
+7. Unit testings (at least 1 endpoint)
+8. PM2 
+10. EC2 
+11. Extra (1 serverless)
+
+
 ## 1. EndPoints to use
 
 ### 1.1 ADMIN Endpoints
