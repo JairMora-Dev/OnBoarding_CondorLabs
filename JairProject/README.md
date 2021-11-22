@@ -43,7 +43,7 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 - `DELETE /doctor/id`      Delete a professional by id
 
-- `PATCH /user/id`         Update health state user
+<!-- - `PATCH /user/id`         Update health state user -->
 
 - `DELETE /user/id`       Delete a user by id
 
@@ -65,7 +65,7 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 - `GET /order/id`     View the user order by id
 
-- `GET /doctor/specialty`     View the professionals avaible in a specialty
+- `GET /doctor/specialism`     View the professionals avaible in a specialty
 
 - `POST /order`       Post a new order
 
@@ -78,20 +78,66 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 ## 2. Models for MongoDB 
 
-### 2.1 User models
+### 2.1 Admin model
 
 ```json
+"user":
 {
-"_id": 384720384283,
-"name": "Jeremy",
-"lastName": "Mathew Johnson",
-    "address":{
-        "_id": 8938498349
-    }
+    "_id": 389857758,
+    "name": "",
+    "lastName": "Mathew Johnson",
+    "state": true,
+    "isAdmin": true
 }
 ```
 
-With its corresponding address
+
+### 2.2 User models
+
+```json
+"user":
+{
+    "_id": 384720384283,
+    "name": "Jeremy",
+    "lastName": "Mathew Johnson",
+    "state": true,
+    "order": {
+        "_id": 28923712922
+    },
+    "isAdmin": false
+}
+```
+
+With its corresponding order
+
+```json
+"order":
+{
+     "_id": 28923712922,
+     "address": "Av. Condor # 32A - 4",
+     "professional": {
+         "_id": 1897645638
+     },
+     "state":"IN_PROGRESS"
+}
+```
+
+With your corresponding professional
+
+```json
+"professional": 
+{
+    "_id": 1897645638,
+    "name": "Julius M.",
+    "lastName": "Hibbert",
+    "specialism":"General",
+    "state": true,
+    "availability": false,
+    "isAdmin": false
+}
+```
+
+
 
 
 
