@@ -19,7 +19,7 @@ endocrinology and general medicine.
 
 ## 1. EndPoints to use
 
-### 1.1 ADMIN Endpoints
+### 1.1 Admin Endpoints
 
 #### Admin Login 
 
