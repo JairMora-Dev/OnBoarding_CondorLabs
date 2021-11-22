@@ -83,11 +83,11 @@ The API must be able to automatically generate the ADMIN user in the database. T
 ```json
 "user":
 {
-    "_id": 389857758,
-    "name": "",
-    "lastName": "Mathew Johnson",
-    "state": true,
-    "isAdmin": true
+    "_id": 389857758 (ObjectId), 
+    "name": "AdminAdmin" (String),
+    "lastName": "Admin" (String),
+    "state": true (Boolean),
+    "isAdmin": true (Boolean)
 }
 ```
 
@@ -97,14 +97,15 @@ The API must be able to automatically generate the ADMIN user in the database. T
 ```json
 "user":
 {
-    "_id": 384720384283,
-    "name": "Jeremy",
-    "lastName": "Mathew Johnson",
-    "state": true,
+    "_id": 384720384283 (ObjectId),
+    "name": "Jeremy" (String),
+    "lastName": "Mathew Johnson" (String),
+    "age": 45 (Integer),
+    "state": true (Boolean),
     "order": {
         "_id": 28923712922
     },
-    "isAdmin": false
+    "isAdmin": false (Boolean)
 }
 ```
 
@@ -113,12 +114,12 @@ With its corresponding order
 ```json
 "order":
 {
-     "_id": 28923712922,
-     "address": "Av. Condor # 32A - 4",
+     "_id": 28923712922 (ObjectId),
+     "address": "Av. Condor # 32A - 4" (String),
      "professional": {
          "_id": 1897645638
      },
-     "state":"IN_PROGRESS"
+     "state":"IN_PROGRESS" (String)
 }
 ```
 
@@ -127,13 +128,13 @@ With your corresponding professional
 ```json
 "professional": 
 {
-    "_id": 1897645638,
-    "name": "Julius M.",
-    "lastName": "Hibbert",
-    "specialism":"General",
-    "state": true,
-    "availability": false,
-    "isAdmin": false
+    "_id": 1897645638 (ObjectId),
+    "name": "Julius M." (String),
+    "lastName": "Hibbert" (String),
+    "specialism":"General" (String),
+    "state": true (Boolean),
+    "availability": false (Boolean),
+    "isAdmin": false (Boolean)
 }
 ```
 
