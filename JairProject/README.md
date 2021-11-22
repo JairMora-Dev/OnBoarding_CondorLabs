@@ -9,7 +9,8 @@ endocrinology and general medicine.
 ### 1.1 ADMIN Endpoints
 
 #### Admin Login 
-    The API must be able to automatically generate the ADMIN user in the database. Therefore the first access endpoint is.
+
+The API must be able to automatically generate the ADMIN user in the database. Therefore the first access endpoint is.
 
 `GET /user/logIn`
 
@@ -77,6 +78,8 @@ endocrinology and general medicine.
 `PUT /order/id`     Update your order
 
 `DELETE /order/id`  Cancel your order
+
+
 
 
 
