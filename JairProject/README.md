@@ -67,7 +67,7 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 - `POST /order`       Post a new order
 
-- `GET /doctor/specialty`     View the professionals avaible in a specialty
+<!-- - `GET /doctor/specialty`     View the professionals avaible in a specialty -->
 
 - `PATCH /order/id`   Update a atribute in your order and confirm your order
 
