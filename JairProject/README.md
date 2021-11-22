@@ -80,7 +80,7 @@ The API must be able to automatically generate the ADMIN user in the database. T
 
 ### User models
 
-```
+```json
     {
 	    "_id": 384720384283,
 	    "name": "Jeremy",
