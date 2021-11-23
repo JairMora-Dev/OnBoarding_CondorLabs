@@ -41,7 +41,7 @@ endocrinology and general medicine.
 
 ### 1.3 Order Endpoints
 
-- `GET /order/:id`     View the user order by id
+- `GET /order`     View the user order by id
 
 - `POST /order`       Post a new order
 
@@ -86,7 +86,7 @@ endocrinology and general medicine.
 "order":
 {
      "_id": 28923712922 (ObjectId),
-     "user":{
+     "user": {
          "_id": 384720384283
      },
      "address": "Av. Condor # 32A - 4" (String),
