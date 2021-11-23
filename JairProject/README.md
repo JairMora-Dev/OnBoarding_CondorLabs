@@ -19,80 +19,38 @@ endocrinology and general medicine.
 
 ## 1. EndPoints to use
 
-### 1.1 Admin Endpoints
+### 1.1 User Endpoints
 
-#### Admin Login 
+- `GET /user`
 
-The API must be able to automatically generate the ADMIN user in the database. Therefore the first access endpoint is.
+- `POST /user`
 
-- `GET /user/logIn`
+- `POST /user/login`
 
-#### Admin get professionals and users
 
-- `GET /doctor`        Get all the professionals available
+### 1.2 Professionals 
 
-- `GET /doctor/id`     Get professional by id
+- `GET /doctor`  
 
-- `GET /user`          Get all users in the API
-
-- `GET /user/id`       Get a user with id
-
-#### Admin update & delete professionals and users
+- `POST /doctor`      Post a new doctor
 
 - `PATCH /doctor/id`       Update the state avaible in a professional 
 
 - `DELETE /doctor/id`      Delete a professional by id
 
-<!-- - `PATCH /user/id`         Update health state user -->
 
-- `DELETE /user/id`       Delete a user by id
-
-#### Admin post a professionals
-
-- `POST /doctor`      Post a new doctor 
-
-### 1.3 User Endpoints
-
-#### User register
-
-- `POST /user`
-
-#### User LogIn 
-
-- `POST /user/LogIn`
-
-#### User operations 
+### 1.3 Order Endpoints
 
 - `GET /order/id`     View the user order by id
 
-- `GET /doctor/specialism`     View the professionals avaible in a specialty
-
 - `POST /order`       Post a new order
-
-- `PATCH /order/id`   Update a atribute in your order and confirm your order
-
-- `PUT /order/id`     Update your order
 
 - `DELETE /order/id`  Cancel your order
 
 
 ## 2. Models for MongoDB 
 
-### 2.1 Admin model
-
-```json
-"user":
-{
-    "_id": 389857758 (ObjectId), 
-    "name": "AdminAdmin" (String),
-    "lastName": "Admin" (String),
-    "state": true (Boolean),
-    "isAdmin": true (Boolean)
-}
-```
-
-
-### 2.2 User models
+### 2.1 User model
 
 ```json
 "user":
@@ -102,28 +60,12 @@ The API must be able to automatically generate the ADMIN user in the database. T
     "lastName": "Mathew Johnson" (String),
     "age": 45 (Integer),
     "state": true (Boolean),
-    "order": {
-        "_id": 28923712922
-    },
     "isAdmin": false (Boolean)
 }
 ```
 
-With its corresponding order
 
-```json
-"order":
-{
-     "_id": 28923712922 (ObjectId),
-     "address": "Av. Condor # 32A - 4" (String),
-     "professional": {
-         "_id": 1897645638
-     },
-     "state":"IN_PROGRESS" (String)
-}
-```
-
-With your corresponding professional
+### 2.2 Professional model
 
 ```json
 "professional": 
@@ -133,13 +75,25 @@ With your corresponding professional
     "lastName": "Hibbert" (String),
     "specialism":"General" (String),
     "state": true (Boolean),
-    "availability": false (Boolean),
-    "isAdmin": false (Boolean)
+    "availability": false (Boolean)
 }
 ```
 
 
+### 2.3 Order model
 
-
-
+```json
+"order":
+{
+     "_id": 28923712922 (ObjectId),
+     "user":{
+         "_id": 384720384283
+     },
+     "address": "Av. Condor # 32A - 4" (String),
+     "professional": {
+         "_id": 1897645638
+     },
+     "state":"IN_PROGRESS" (String)
+}
+```
 
