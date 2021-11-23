@@ -21,16 +21,16 @@ endocrinology and general medicine.
 
 ### 1.1 User Endpoints
 
-- `GET /user`
+- `GET /user` Get all users
 
-- `POST /user`
+- `POST /user`  Register in the API
 
-- `POST /user/login`
+- `POST /user/login` Login process in the API
 
 
 ### 1.2 Professionals 
 
-- `GET /doctor`  
+- `GET /doctor`  Get all professional 
 
 - `POST /doctor`      Post a new doctor
 
@@ -41,7 +41,7 @@ endocrinology and general medicine.
 
 ### 1.3 Order Endpoints
 
-- `GET /order/id`     View the user order by id
+- `GET /order/:id`     View the user order by id
 
 - `POST /order`       Post a new order
 
@@ -93,6 +93,7 @@ endocrinology and general medicine.
      "professional": {
          "_id": 1897645638
      },
+     "dateOrder": "2022-01-17T03:36:48Z",
      "state":"IN_PROGRESS" (String)
 }
 ```
