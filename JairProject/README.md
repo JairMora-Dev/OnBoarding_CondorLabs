@@ -34,9 +34,6 @@ endocrinology and general medicine.
 
 - `POST /doctor`      Post a new doctor
 
-- `PATCH /doctor/id`       Update the state avaible in a professional 
-
-- `DELETE /doctor/id`      Delete a professional by id
 
 
 ### 1.3 Order Endpoints
