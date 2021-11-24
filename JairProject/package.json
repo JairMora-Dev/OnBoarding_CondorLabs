@@ -1,0 +1,35 @@
+{
+  "name": "personalproject",
+  "version": "1.0.0",
+  "description": "PP para Onboarding in CondorLabs <3 ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/index.js",
+    "start": "nodemon ./src/index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JairMora-Dev/OnBoarding_CondorLabs.git#main"
+  },
+  "keywords": [
+    "PersonalProject",
+    "CondorLabs",
+    "OnBoarding"
+  ],
+  "author": "Jair Agudelo Mora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs/issues"
+  },
+  "homepage": "https://github.com/JairMora-Dev/OnBoarding_CondorLabs/tree/main#readme",
+  "dependencies": {
+    "@condor-labs/mongodb": "^1.1.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.2.0"
+  }
+}
