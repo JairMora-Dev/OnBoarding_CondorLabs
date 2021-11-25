@@ -18,9 +18,11 @@ mongoSettings
 
 const userRoutes = require('./routes/user.routes');
 const profRoutes = require('./routes/professional.routes');
+const orderRoutes = require('./routes/order.routes');
 
 app.use('/', userRoutes);
 app.use('/', profRoutes);
+app.use('/', orderRoutes);
 
 app.listen(PORT, () => {
   console.log(`Listen this personal project in PORT ${PORT}`);
