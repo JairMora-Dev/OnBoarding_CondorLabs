@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoSettings = require('./database/mongoCLabs');
 
+require('dotenv').config('../.env');
+
 const app = express();
 const PORT = 3000;
 
@@ -16,7 +18,7 @@ mongoSettings
 
 const userRoutes = require('./routes/user.routes');
 
-app.use('/users', userRoutes);
+app.use('/', userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Listen this personal project in PORT ${PORT}`);
