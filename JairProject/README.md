@@ -34,7 +34,7 @@ endocrinology and general medicine.
 
 - `POST /doctor`      Post a new doctor
 
-
+- `PUT /doctor/:id`  soft Delete in the state doctor
 
 ### 1.3 Order Endpoints
 
@@ -42,7 +42,7 @@ endocrinology and general medicine.
 
 - `POST /order`       Post a new order
 
-- `DELETE /order/id`  Cancel your order
+- `DELETE /order/:id`  Cancel your order
 
 
 ## 2. Models for MongoDB 

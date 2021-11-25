@@ -25,7 +25,7 @@ exports.singIn = async (req, res) => {
       password: bcrypt.hashSync(password, 10),
       age,
     });
-    //newUser.save();
+    newUser.save();
     res.status(201).json(newUser);
   } catch (err) {
     res.status(400).json(err);
