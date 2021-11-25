@@ -3,7 +3,7 @@
 const User = require('../models/user.model');
 const expressJwt = require('express-jwt');
 
-const superPassword = process.env.PASSWORD_MONGODB; //cambiar
+const superPassword = process.env.API_KEY;
 const { ADMIN_NAME, ADMIN_LNAME } = process.env;
 
 exports.JWTexp = expressJwt({
