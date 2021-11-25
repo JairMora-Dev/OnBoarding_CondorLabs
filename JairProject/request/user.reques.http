@@ -1,6 +1,6 @@
 ###Get all users
 GET http://localhost:3000/users 
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQ29uZG9ySGVhbHQzNDU2Nzg5IiwibGFzdE5hbWUiOiIkJGRlbDBhbDEwJCQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2Mzc4NDc3ODJ9.zTkOIAN9tdXCQa8lqRPy7r5jszVklnsUIrpyvvGZtMM
+Authorization: bearer -admin token here-
 
 ### POST new user
 POST http://localhost:3000/user
@@ -24,14 +24,6 @@ Content-Type: application/json
     "password": "1234MM"
 }
 
-### login Admin in API
-POST http://localhost:3000/user/login 
-Content-Type: application/json
 
-{
-    "name":"CondorHealt3456789",
-    "lastName": "$$del0al10$$",
-    "password": "AdminJairProjectCondorLabs2021"
-}
 
 
