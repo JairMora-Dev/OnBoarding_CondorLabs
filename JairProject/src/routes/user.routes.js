@@ -7,7 +7,9 @@ const middleUser = require('../middlewares/user.middleware');
 userRoutes.use('/users', middleUser.JWTexp, middleUser.invalidToken, middleUser.adminToken);
 userRoutes.get('/users', user.find);
 
-userRoutes.post('/user', user.singIn);
+userRoutes.use('/user/singin', middleUser.noRepeatUser);
+userRoutes.post('/user/singin', user.singIn);
+
 userRoutes.post('/user/login', user.logIn);
 
 module.exports = userRoutes;

@@ -29,3 +29,14 @@ exports.adminToken = async (req, res, next) => {
     res.status(403).json({ message: `You aren't the ADMIN of this app` });
   }
 };
+
+exports.noRepeatUser = async (req, res, next) => {
+  const { name, lastName } = req.body;
+  const user = await User.findOne({ name: name, lastName: lastName });
+
+  if (user) {
+    res.status(400).json({ message: `The user entered already exists in the system, please enter another` });
+  } else {
+    next();
+  }
+};

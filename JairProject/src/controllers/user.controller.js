@@ -51,6 +51,6 @@ exports.logIn = async (req, res) => {
       res.status(200).json({ token: `${token}` });
     }
   } catch (err) {
-    res.status(401).json(err);
+    res.status(401).json({ err: `Please first register in our system` });
   }
 };

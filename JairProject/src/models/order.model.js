@@ -2,7 +2,7 @@ const mongodb = require('@condor-labs/mongodb')();
 
 const orderSchema = mongodb.mongoose.Schema({
   user: {
-    type: Array,
+    type: Object,
     required: true,
   },
   address: {
@@ -10,7 +10,7 @@ const orderSchema = mongodb.mongoose.Schema({
     required: true,
   },
   professional: {
-    type: Array,
+    type: Object,
     required: true,
   },
   dateOrder: {
