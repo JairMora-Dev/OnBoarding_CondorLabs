@@ -1,3 +1,4 @@
+const addDateOrder = require('../middlewares/date_FunJson');
 const order = require('../models/order.model');
 
 const users = require('../models/user.model');
@@ -20,6 +21,7 @@ exports.postOrder = async (req, res) => {
     const { doctor } = req.query;
     const findPro = await professional.findOne({ _id: doctor });
     const { address, dateOrder } = req.body;
+    addDateOrder(dateOrder);
 
     if (address && dateOrder) {
       const newOrder = await new order({
@@ -29,12 +31,16 @@ exports.postOrder = async (req, res) => {
         dateOrder,
       });
       res.status(200).json(newOrder);
-      newOrder.save();
+      //newOrder.save();
     } else {
       res.status(401).json({ err: `Please verify address and dateOrder in body` });
     }
   } catch (err) {
-    res.status(401).json({ err: `Dont found the doctor by _id` });
+    res
+      .status(401)
+      .json({
+        Causes_err: `1. Dont found the doctor by _id, 2.Your hour date is out of range doctors work. Please verify your date medical data!`,
+      });
   }
 };
 

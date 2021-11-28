@@ -27,8 +27,5 @@
       "eslint",
       "prettier --write"
     ]
-  },
-  "dependencies": {
-    "express": "^4.17.1"
   }
 }
