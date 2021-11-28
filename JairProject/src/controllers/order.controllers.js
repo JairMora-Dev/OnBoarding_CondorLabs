@@ -36,11 +36,9 @@ exports.postOrder = async (req, res) => {
       res.status(401).json({ err: `Please verify address and dateOrder in body` });
     }
   } catch (err) {
-    res
-      .status(401)
-      .json({
-        Causes_err: `1. Dont found the doctor by _id, 2.Your hour date is out of range doctors work. Please verify your date medical data!`,
-      });
+    res.status(401).json({
+      Causes_err: `1. Dont found the doctor by _id, 2.Your hour date is out of range doctors work. Please verify your date medical data!`,
+    });
   }
 };
 
