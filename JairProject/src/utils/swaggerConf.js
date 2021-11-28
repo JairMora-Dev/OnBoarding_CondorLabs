@@ -315,7 +315,7 @@ const swaggerOptions = {
                   },
                   example: {
                     address: 'Cll 34 # 2A - 45',
-                    dateOrder: '2021 - 08 - 16',
+                    dateOrder: 'December 7, 2021, 8:59:30',
                   },
                 },
               },
