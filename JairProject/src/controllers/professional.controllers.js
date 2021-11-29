@@ -31,10 +31,10 @@ exports.findProfes = async (req, res) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
-              return -1;
+              return 1;
             }
             if (nameI < nameF) {
-              return 1;
+              return -1;
             }
           });
           const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
@@ -44,10 +44,10 @@ exports.findProfes = async (req, res) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
-              return 1;
+              return -1;
             }
             if (nameI < nameF) {
-              return -1;
+              return 1;
             }
           });
           const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
@@ -62,10 +62,10 @@ exports.findProfes = async (req, res) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
-              return -1;
+              return 1;
             }
             if (nameI < nameF) {
-              return 1;
+              return -1;
             }
           });
           const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
@@ -75,10 +75,10 @@ exports.findProfes = async (req, res) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
-              return 1;
+              return -1;
             }
             if (nameI < nameF) {
-              return -1;
+              return 1;
             }
           });
           const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
