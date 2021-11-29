@@ -19,10 +19,19 @@ exports.postProfes = async (req, res) => {
 
 exports.findProfes = async (req, res) => {
   try {
-    const pros = await professional.find();
-    res.status(200).json(pros);
+    const { offset, limit, specialism } = req.query;
+    const profFindSpe = await professional.find({ specialism });
+
+    if (specialism) {
+      const prosPagin = profFindSpe.slice((offset - 1) * limit, offset * limit);
+      res.status(200).json(prosPagin);
+    } else {
+      const profFind = await professional.find();
+      const prosPagin = profFind.slice((offset - 1) * limit, offset * limit);
+      res.status(200).json(prosPagin);
+    }
   } catch (err) {
-    res.status(404).json(err);
+    res.status(404).json({ err: 'catch error' });
   }
 };
 
