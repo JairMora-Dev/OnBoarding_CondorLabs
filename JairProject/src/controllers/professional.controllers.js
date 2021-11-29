@@ -19,19 +19,80 @@ exports.postProfes = async (req, res) => {
 
 exports.findProfes = async (req, res) => {
   try {
-    const { offset, limit, specialism } = req.query;
-    const profFindSpe = await professional.find({ specialism });
+    const { offset, limit, specialism, sort } = req.query;
 
-    if (specialism) {
-      const prosPagin = profFindSpe.slice((offset - 1) * limit, offset * limit);
-      res.status(200).json(prosPagin);
-    } else {
+    if (limit && offset) {
       const profFind = await professional.find();
-      const prosPagin = profFind.slice((offset - 1) * limit, offset * limit);
-      res.status(200).json(prosPagin);
+      const profFindSpe = await professional.find({ specialism });
+
+      if (specialism) {
+        if (sort === 'asc') {
+          const listed = profFindSpe.sort((i, f) => {
+            const nameI = i.lastName.toUpperCase();
+            const nameF = f.lastName.toUpperCase();
+            if (nameI > nameF) {
+              return -1;
+            }
+            if (nameI < nameF) {
+              return 1;
+            }
+          });
+          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(prosPagin);
+        } else if (sort === 'desc') {
+          const listed = profFindSpe.sort((i, f) => {
+            const nameI = i.lastName.toUpperCase();
+            const nameF = f.lastName.toUpperCase();
+            if (nameI > nameF) {
+              return 1;
+            }
+            if (nameI < nameF) {
+              return -1;
+            }
+          });
+          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(prosPagin);
+        } else {
+          const prosPagin = profFindSpe.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(prosPagin);
+        }
+      } else {
+        if (sort === 'asc') {
+          const listed = profFind.sort((i, f) => {
+            const nameI = i.lastName.toUpperCase();
+            const nameF = f.lastName.toUpperCase();
+            if (nameI > nameF) {
+              return -1;
+            }
+            if (nameI < nameF) {
+              return 1;
+            }
+          });
+          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(prosPagin);
+        } else if (sort === 'desc') {
+          const listed = profFind.sort((i, f) => {
+            const nameI = i.lastName.toUpperCase();
+            const nameF = f.lastName.toUpperCase();
+            if (nameI > nameF) {
+              return 1;
+            }
+            if (nameI < nameF) {
+              return -1;
+            }
+          });
+          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(prosPagin);
+        } else {
+          const prosPagin = profFind.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(prosPagin);
+        }
+      }
+    } else {
+      res.status(400).json({ err: `Please add offset and limit` });
     }
   } catch (err) {
-    res.status(404).json({ err: 'catch error' });
+    res.status(404).json(err);
   }
 };
 
