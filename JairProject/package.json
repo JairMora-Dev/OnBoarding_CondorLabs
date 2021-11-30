@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node ./src/index.js",
     "start": "nodemon ./src/index.js",
-    "test": "test"
+    "test": "jest",
+    "test:watch": "NODE_ENV=test jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,10 @@
     "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
-    "jest": "^27.4.0"
+    "chai": "^4.3.4",
+    "jest": "^27.4.0",
+    "query-string": "^7.0.1",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.6"
   }
 }

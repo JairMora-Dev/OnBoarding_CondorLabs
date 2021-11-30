@@ -19,9 +19,10 @@ exports.postOrder = async (req, res) => {
 
   try {
     const { doctor } = req.query;
-    const findPro = await professional.findOne({ _id: doctor });
     const { address, dateOrder } = req.body;
+    const findPro = await professional.findOne({ _id: doctor });
     addDateOrder(dateOrder);
+    //noRepeatDates(dateOrder);
 
     if (address && dateOrder) {
       const newOrder = await new order({
