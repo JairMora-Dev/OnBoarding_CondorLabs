@@ -30,7 +30,7 @@ app.use('/', profRoutes);
 app.use('/', orderRoutes);
 
 app.listen(PORT, () => {
-  //console.log(`Listen this personal project in PORT ${PORT}`);
+  console.log(`Listen this personal project in PORT ${PORT}`);
 });
 
 module.exports = app;

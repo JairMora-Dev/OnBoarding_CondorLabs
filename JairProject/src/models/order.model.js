@@ -14,7 +14,7 @@ const orderSchema = mongodb.mongoose.Schema({
     required: true,
   },
   dateOrder: {
-    type: String,
+    type: Date,
     required: true,
   },
   state: {
