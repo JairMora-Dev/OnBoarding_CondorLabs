@@ -9,6 +9,6 @@ profRoutes.get('/doctors', professional.findProfes);
 
 profRoutes.use('/doctor', middlew.JWTexp, middlew.invalidToken, middlew.adminToken);
 profRoutes.post('/doctor', professional.postProfes);
-profRoutes.put('/doctor', professional.desabProfes);
+profRoutes.delete('/doctor', professional.desabProfes);
 
 module.exports = profRoutes;
