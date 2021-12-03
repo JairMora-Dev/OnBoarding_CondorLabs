@@ -10,8 +10,8 @@ exports.find = async (req, res) => {
   try {
     const users = await user.find();
     res.status(200).json(users);
-  } catch (err) {
-    res.status(404).json(err);
+  } catch {
+    res.status(500).json({ err: `server error` });
   }
 };
 

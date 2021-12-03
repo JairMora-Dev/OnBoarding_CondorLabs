@@ -75,7 +75,10 @@ const usersMocks = [
     },
   ],
 ];
-jest.mock('../models/user.model');
+
+jest.mock('../models/user.model', () => ({
+  find: jest.fn().mockReturnThis(),
+}));
 
 describe('When this endpoint get all users', () => {
   afterEach(() => {
@@ -84,10 +87,25 @@ describe('When this endpoint get all users', () => {
 
   it('Should get all users return status 200', async () => {
     user.find.mockResolvedValue(usersMocks);
-    //sinon.stub(user, 'find').resolves(usersMocks);
     const res = { status: jest.fn().mockReturnThis(), json: jest.fn().mockReturnThis() };
 
     await userController.find({}, res);
     expect(user.find).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith(usersMocks);
+  });
+});
+
+describe('When the server is broke', () => {
+  it('Should get all user return status 500', async () => {
+    user.find.mockImplementation(() => {
+      throw new Error('My Server Error');
+    });
+    const res = { status: jest.fn().mockReturnThis(), json: jest.fn().mockReturnThis() };
+
+    await userController.find({}, res);
+    expect(user.find).toHaveBeenCalledTimes(1);
+    expect(res.status).toHaveBeenCalledWith(500);
+    expect(res.json).toHaveBeenCalledWith({ err: 'server error' });
   });
 });
