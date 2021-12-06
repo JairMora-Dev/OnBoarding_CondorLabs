@@ -17,7 +17,7 @@ exports.postProfes = async (req, res) => {
   }
 };
 
-exports.findProfes = async (req, res) => {
+exports.find = async (req, res) => {
   try {
     const { offset, limit, specialism, sort } = req.query;
 
