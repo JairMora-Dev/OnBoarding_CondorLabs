@@ -241,7 +241,6 @@ describe(`When this endpoint get all professional`, () => {
     expect(professional.find).toHaveBeenCalled();
     expect(res.json).toHaveBeenCalled();
     const resBody = res.json.mock.calls[0][0];
-    console.log(resBody);
     expect(resBody[0]).toBe(proMocksSlice[0]);
     expect(resBody[1]).toBe(proMocksSlice[1]);
     expect(resBody[2]).toBe(proMocksSlice[2]);
