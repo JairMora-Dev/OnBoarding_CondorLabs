@@ -1,8 +1,8 @@
 const user = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
-const userValidate = require('../helpers/users.singIn');
-const logInValidate = require('../helpers/users.logIn');
+const userValidate = require('../schemas/users.singIn');
+const logInValidate = require('../schemas/users.logIn');
 
 const superPassword = process.env.PASSWORD_MONGODB;
 

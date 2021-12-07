@@ -1,7 +1,7 @@
 const express = require('express');
 const orderRoutes = express.Router();
 
-const order = require('../controllers/order.controllers');
+const order = require('../controllers/order.controller');
 const middleUser = require('../middlewares/user.middleware');
 
 orderRoutes.use('/orders', middleUser.JWTexp, middleUser.invalidToken, middleUser.adminToken);

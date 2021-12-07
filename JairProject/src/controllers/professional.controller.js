@@ -1,5 +1,5 @@
 const professional = require('../models/professional.model');
-const proValidate = require('../helpers/prof.post');
+const proValidate = require('../schemas/professional.Joipost');
 
 exports.postProfes = async (req, res) => {
   try {

@@ -1,7 +1,7 @@
 const express = require('express');
 const profRoutes = express.Router();
 
-const professional = require('../controllers/professional.controllers');
+const professional = require('../controllers/professional.controller');
 const middlew = require('../middlewares/user.middleware');
 
 profRoutes.use('/doctors', middlew.JWTexp, middlew.invalidToken);

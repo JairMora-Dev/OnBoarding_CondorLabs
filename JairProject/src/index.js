@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoSettings = require('./database/mongoCLabs');
+const mongoSettings = require('./database/mongoDBSettings');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 const swaggerOptions = require('./utils/swaggerConf');
