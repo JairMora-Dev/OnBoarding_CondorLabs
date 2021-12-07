@@ -20,13 +20,13 @@ mongoSettings
   });
 
 const userRoutes = require('./routes/user.routes');
-const profRoutes = require('./routes/professional.routes');
+const professionalRoutes = require('./routes/professional.routes');
 const orderRoutes = require('./routes/order.routes');
 const swaggerSpecs = swaggerJsDoc(swaggerOptions);
 
 app.use('/condorhealtcare', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 app.use('/', userRoutes);
-app.use('/', profRoutes);
+app.use('/', professionalRoutes);
 app.use('/', orderRoutes);
 
 app.listen(PORT, () => {

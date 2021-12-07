@@ -1,14 +1,14 @@
 const express = require('express');
-const profRoutes = express.Router();
+const professionalRoutes = express.Router();
 
 const professional = require('../controllers/professional.controller');
 const middlew = require('../middlewares/user.middleware');
 
-profRoutes.use('/doctors', middlew.JWTexp, middlew.invalidToken);
-profRoutes.get('/doctors', professional.find);
+professionalRoutes.use('/doctors', middlew.JWTexp, middlew.invalidToken);
+professionalRoutes.get('/doctors', professional.find);
 
-profRoutes.use('/doctor', middlew.JWTexp, middlew.invalidToken, middlew.adminToken);
-profRoutes.post('/doctor', professional.postProfes);
-profRoutes.delete('/doctor', professional.desabProfes);
+professionalRoutes.use('/doctor', middlew.JWTexp, middlew.invalidToken, middlew.adminToken);
+professionalRoutes.post('/doctor', professional.postProfes);
+professionalRoutes.delete('/doctor', professional.desabProfes);
 
-module.exports = profRoutes;
+module.exports = professionalRoutes;
