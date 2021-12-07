@@ -5,13 +5,13 @@ exports.postProfes = async (req, res) => {
   try {
     const { name, lastName, specialism } = await proValidate.validateAsync(req.body);
 
-    const newPro = await new professional({
+    const newProfessional = await new professional({
       name,
       lastName,
       specialism,
     });
-    newPro.save();
-    res.status(201).json(newPro);
+    newProfessional.save();
+    res.status(201).json(newProfessional);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -22,12 +22,12 @@ exports.find = async (req, res) => {
     const { offset, limit, specialism, sort } = req.query;
 
     if (limit && offset) {
-      const profFind = await professional.find();
-      const profFindSpe = await professional.find({ specialism });
+      const professionalFind = await professional.find();
+      const professionalBySpecialims = await professional.find({ specialism });
 
       if (specialism) {
         if (sort === 'asc') {
-          const listed = profFindSpe.sort((i, f) => {
+          const listed = professionalBySpecialims.sort((i, f) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
@@ -37,10 +37,10 @@ exports.find = async (req, res) => {
               return -1;
             }
           });
-          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
-          res.status(200).json(prosPagin);
+          const paginationProfessional = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(paginationProfessional);
         } else if (sort === 'desc') {
-          const listed = profFindSpe.sort((i, f) => {
+          const listed = professionalBySpecialims.sort((i, f) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
@@ -50,15 +50,15 @@ exports.find = async (req, res) => {
               return 1;
             }
           });
-          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
-          res.status(200).json(prosPagin);
+          const paginationProfessional = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(paginationProfessional);
         } else {
-          const prosPagin = profFindSpe.slice((offset - 1) * limit, offset * limit);
-          res.status(200).json(prosPagin);
+          const paginationProfessional = professionalBySpecialims.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(paginationProfessional);
         }
       } else {
         if (sort === 'asc') {
-          const listed = profFind.sort((i, f) => {
+          const listed = professionalFind.sort((i, f) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
@@ -68,10 +68,10 @@ exports.find = async (req, res) => {
               return -1;
             }
           });
-          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
-          res.status(200).json(prosPagin);
+          const paginationProfessional = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(paginationProfessional);
         } else if (sort === 'desc') {
-          const listed = profFind.sort((i, f) => {
+          const listed = professionalFind.sort((i, f) => {
             const nameI = i.lastName.toUpperCase();
             const nameF = f.lastName.toUpperCase();
             if (nameI > nameF) {
@@ -81,11 +81,11 @@ exports.find = async (req, res) => {
               return 1;
             }
           });
-          const prosPagin = listed.slice((offset - 1) * limit, offset * limit);
-          res.status(200).json(prosPagin);
+          const paginationProfessional = listed.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(paginationProfessional);
         } else {
-          const prosPagin = profFind.slice((offset - 1) * limit, offset * limit);
-          res.status(200).json(prosPagin);
+          const paginationProfessional = professionalFind.slice((offset - 1) * limit, offset * limit);
+          res.status(200).json(paginationProfessional);
         }
       }
     } else {
@@ -100,9 +100,11 @@ exports.desabProfes = async (req, res) => {
   try {
     const { _id } = req.query;
     const { state } = req.body;
-    const deletePros = await professional.findOneAndUpdate(_id, { state: state });
-    res.status(200).json({ message: `Admin you change the state of the professional with id: ${deletePros._id}` });
-  } catch (err) {
-    res.status(404).json(err);
+    const deleteProfessional = await professional.findOneAndUpdate(_id, { state: state });
+    res
+      .status(200)
+      .json({ message: `Admin you change the state of the professional with id: ${deleteProfessional._id}` });
+  } catch {
+    res.status(500).json({ err: '--server error---' });
   }
 };
